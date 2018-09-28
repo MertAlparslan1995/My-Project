@@ -1,0 +1,151 @@
+using System.Collections;
+
+using System.Collections.Generic;
+
+using UnityEngine;
+
+
+
+public class KarakterHareket : MonoBehaviour {
+
+
+
+    public float hiz;
+
+    private Vector3 tus;
+
+    // Use this for initialization
+
+    void Start () {
+
+		
+
+	}
+
+	
+
+	// Update is called once per frame
+
+	void Update () {
+
+        tus = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+
+        GetComponent<Rigidbody>().AddForce(tus*hiz);
+
+    }
+
+}
+
+using System.Collections;
+
+using System.Collections.Generic;
+
+using UnityEngine;
+
+
+
+public class Rotate : MonoBehaviour {
+
+    float timeCounter = 0;
+
+
+
+    float speed;
+
+    float width;
+
+    float height;
+
+	// Use this for initialization
+
+	void Start () {
+
+        speed = 1;
+
+        width = 8;
+
+        height = 4;
+
+	}
+
+	
+
+	// Update is called once per frame
+
+	void Update () {
+
+        timeCounter += Time.deltaTime * speed;
+
+        float x = Mathf.Cos(timeCounter) * width;
+
+        float y = 3;
+
+        float z = Mathf.Sin(timeCounter) * height; ;
+
+
+
+        transform.position = new Vector3(x, y, z);
+
+	}
+
+}
+
+using System.Collections;
+
+using System.Collections.Generic;
+
+using UnityEngine;
+
+
+
+public class RotateUranus : MonoBehaviour
+
+{
+
+    float timeCounter = 0;
+
+
+
+    float speed;
+
+    float width;
+
+    float height;
+
+    // Use this for initialization
+
+    void Start()
+
+    {
+
+        speed = 1;
+
+        width = 7;
+
+        height = 12;
+
+    }
+
+
+
+    // Update is called once per frame
+
+    void Update()
+
+    {
+
+        timeCounter += Time.deltaTime * speed;
+
+        float x = Mathf.Cos(timeCounter) * width;
+
+        float y = Mathf.Sin(timeCounter) * height;
+
+        float z = 3;
+
+
+
+        transform.position = new Vector3(x, y, z);
+
+    }
+
+}
